@@ -1,0 +1,46 @@
+<h1>Angular App</h1>
+<p><b>Nombre</b>: {{name}}</p>
+<p><b>Mail</b>: {{email}}</p>
+<p><b>Dirección</b>: {{direccion.calle}} {{direccion.ciudad}},{{direccion.estado}}</p>
+<hr />
+<button (click)="toggleHobbies()">
+	{{showHobbies ? "Ocultar" : "Mostrar "}} hobbies
+</button>
+<div *ngIf="showHobbies">
+	<h2>Hobbies</h2>
+	<ul>
+		<li *ngFor="let hobby of hobbies; let i = index">
+		{{hobby}} <button (click)="deleteHobby(i)">X</button>
+		</li>
+	</ul>
+	<form (submit)="addHobby(hobby.value)">
+		<label>Agregar hobby:</label>
+		<input type="text" name="pollo" #hobby/>
+	</form>
+</div>
+<hr />
+<h2>Editar el usuario</h2>
+<form>
+	<label for="name">Nombre:</label>
+	<input type="text" name="name" [(ngModel)]="name" />
+	<br />
+	<label for="email">Email:</label>
+	<input type="text" name="email" [(ngModel)]="email" />
+	<br />
+	<label for="direccion.calle">Calle:</label>
+	<input type="text" name="direccion.calle" [(ngModel)]="direccion.calle" />
+	<br />
+	<label for="direccion.ciudad">Ciudad:</label>
+	<input type="text" name="direccion.ciudad" [(ngModel)]="direccion.ciudad" />
+	<br />
+	<label for="direccion.estado">Estado:</label>
+	<input type="text" name="direccion.estado" [(ngModel)]="direccion.estado" />
+</form>
+<hr />
+<h2>Foto Galería</h2>
+<ul class="galeriaLayout">
+	<li *ngFor="let photo of photos">
+		<img src="{{photo.thumbnailUrl}}" alt="{{photo.title}}" />
+		<p>{{photo.title}}</p>
+	</li>
+</ul>
