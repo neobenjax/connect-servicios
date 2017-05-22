@@ -23,6 +23,7 @@ export class HomeComponent  {
 
 	toggleRealizada(indice:number,idTarea:number){
 		this.todos[indice].completed = (this.todos[indice].completed)?false:true;
+		//Consultar Servicio de actualizacion de datos
 	}
 
 	editarTarea(indice:number,idTarea:number){
@@ -36,6 +37,7 @@ export class HomeComponent  {
 		if (borrar) {
 			this.todos.splice(indice,1);
 			alert('Tarea eliminada');
+			//Consultar servicio de eliminacion de datos
 		} else {
 			alert('Tarea sin modificaciones');
 		}
