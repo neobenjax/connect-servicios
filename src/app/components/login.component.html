@@ -1,0 +1,15 @@
+<div class="contenedor-login">
+	<form (submit)="submitLogin(usuario.value,password.value)">
+		<div class="campo-formulario">
+			<label for="usuario">Nombre de usuario:</label>
+			<input type="text" name="usuario" #usuario />
+		</div>
+		<div class="campo-formulario">
+			<label for="password">Password:</label>
+			<input type="password" name="password" #password />
+		</div>
+		<div class="campo-formulario">
+      		<input type="submit" name="submitBtn" value="Iniciar">
+		</div>
+	</form>
+</div>

@@ -1,17 +1,22 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import { UserComponent }  from './components/user.component';
-import { FotoComponent }  from './components/foto.component';
+import { LoginComponent }  from './components/login.component';
+import { HomeComponent }  from './components/home.component';
+import { DetalleComponent }  from './components/detalle.component';
 
 const appRoutes: Routes = [
 	{
 		path:'',
-		component: UserComponent
+		component: LoginComponent
 	},
 	{
-		path:'foto',
-		component: FotoComponent
+		path:'home',
+		component: HomeComponent
+	},
+	{
+		path:'detalle',
+		component: DetalleComponent
 	}
 ];
 

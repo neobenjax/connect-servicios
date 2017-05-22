@@ -1,0 +1,33 @@
+<div class="contenedor-home">
+	<div class="listado-todos">
+		<ul>
+			<li *ngFor="let todo of todos; let indice = index">
+				<p class="titulo-tarea">
+					<b>{{todo.id}}</b>: {{todo.title}}
+				</p>
+				<ul class="barra-acciones-tarea">
+					<li>
+						<button 
+							(click)="toggleRealizada(indice,todo.id)"
+							class="toggle-tarea" 
+							title="{{todo.completed ? 'Re abrir' : 'Lista' }}">
+							<i class="material-icons">
+								{{todo.completed ? 'lock_open' : 'done' }}
+							</i>
+						</button>
+					</li>
+					<li>
+						<button (click)="editarTarea(indice,todo.id)" class="editar" title="Editar">
+							<i class="material-icons">description</i>
+						</button>
+					</li>
+					<li>
+						<button (click)="eliminarTarea(indice,todo.id)" class="eliminar" title="Eliminar">
+							<i class="material-icons">delete</i>
+						</button>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,25 +1,42 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+*{
+margin:0;
+padding:0;  
 }
 
-
-form label{
-	font-weight: bold;
-	display: block;
+body{
+    font-family:sans-serif;
+    font-size:14px;
+    font-family: 'Roboto';
 }
 
-ul.galeriaLayout {
+.listado-todos > ul {list-style: none;display: flex;flex-direction: column;}
+
+.listado-todos > ul > li {
+    padding: 10px;
+    border-bottom: 1px solid #ededed;
     display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-ul.galeriaLayout > li {
-    max-width: 150px;
-    font-size: 14px;
-    font-family: sans-serif;
+.contenedor-home {
+    margin: 20px 60px;
+}
+
+.listado-todos > ul > li ul.barra-acciones-tarea {
+    list-style: none;
+    display: flex;
+}
+
+.listado-todos > ul > li ul.barra-acciones-tarea > li{
+    margin:0 5px;
+}
+
+.listado-todos > ul > li ul.barra-acciones-tarea > li button{
+    border:none;
+    background:none;
+    border-bottom:1px solid #ededed;
 }

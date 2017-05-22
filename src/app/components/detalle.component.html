@@ -1,0 +1,15 @@
+<div class="contenido-detalle-todo">
+	<h1>{{todo.id}} : {{todo.title}}</h1>
+	<p class="todo-instruccion">
+		Modifiqué el texto de la tarea:
+	</p>
+	<form (submit)="editTodo(titulo.value)">
+		<div class="campo-formulario">
+			<label for="usuario">Titulo de la tarea:</label>
+			<input type="text" name="titulo"  value="{{todo.title}}" #titulo />
+		</div>
+		<div class="campo-formulario">
+			<input type="submit" value="Guardar">
+		</div>
+	</form>
+</div>
