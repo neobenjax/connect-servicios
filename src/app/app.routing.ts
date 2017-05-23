@@ -17,6 +17,10 @@ const appRoutes: Routes = [
 	{
 		path:'detalle',
 		component: DetalleComponent
+	},
+	{ 
+		path: 'detalle/:id',
+		component: DetalleComponent
 	}
 ];
 

@@ -24,20 +24,30 @@ export class HomeComponent  {
 	toggleRealizada(indice:number,idTarea:number){
 		this.todos[indice].completed = (this.todos[indice].completed)?false:true;
 		//Consultar Servicio de actualizacion de datos
+		this.todosservice.setTodo(this.todos[indice]).subscribe( todonew => {
+			//console.log(todonew);
+			console.log('Actualizado');
+		} );
+
 	}
 
 	editarTarea(indice:number,idTarea:number){
 		//this.router.navigate(['/detalle',idTarea]);
-		this.router.navigate(['/detalle']);
+		this.router.navigate(['/detalle',idTarea]);
 	}
 
 	eliminarTarea(indice:number,idTarea:number){
 		let borrar = confirm('¿Esta seguro que desea eliminar la tarea '+ idTarea);
 		
 		if (borrar) {
+			this.todos[indice].status = false;
+			//Consultar Servicio de actualizacion de datos
+			this.todosservice.setTodo(this.todos[indice]).subscribe( todonew => {
+				//console.log(todonew);
+				console.log('Actualizado');
+			} );
+
 			this.todos.splice(indice,1);
-			alert('Tarea eliminada');
-			//Consultar servicio de eliminacion de datos
 		} else {
 			alert('Tarea sin modificaciones');
 		}
@@ -50,4 +60,5 @@ interface Todos{
 	id: number;
 	title: string;
 	completed: boolean;
+	status:boolean;
 }

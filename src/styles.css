@@ -18,7 +18,8 @@ body{
 
 .listado-todos > ul {list-style: none;display: flex;flex-direction: column;}
 
-.listado-todos > ul > li {
+
+.listado-todos > ul > li div.interior-lista {
     padding: 10px;
     border-bottom: 1px solid #ededed;
     display: flex;
@@ -26,6 +27,14 @@ body{
     align-items: center;
 }
 
+.listado-todos > ul > li div.interior-lista._header {
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+}
+.listado-todos > ul > li:nth-child(even) div.interior-lista{
+    background:#ededed;
+}
 .contenedor-home {
     margin: 20px 60px;
 }
@@ -93,4 +102,18 @@ input[type="submit"] {
     font-weight: bold;
     background: #69e2ff;
     font-family: 'Roboto';
+    min-width: 100px;
+}
+
+input.btn-cancel {
+    background: #FF1744;
+    color: #fff;
+}
+.contenedor-detalle {
+    margin: 20px 60px;
+}
+
+p.todo-instruccion {
+    margin: 20px 0;
+    font-weight: bold;
 }

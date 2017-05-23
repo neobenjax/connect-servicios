@@ -1,15 +1,27 @@
-<div class="contenido-detalle-todo">
-	<h1>{{todo.id}} : {{todo.title}}</h1>
-	<p class="todo-instruccion">
-		Modifiqué el texto de la tarea:
-	</p>
-	<form (submit)="editTodo(titulo.value)">
-		<div class="campo-formulario">
-			<label for="usuario">Titulo de la tarea:</label>
-			<input type="text" name="titulo"  value="{{todo.title}}" #titulo />
-		</div>
-		<div class="campo-formulario">
-			<input type="submit" value="Guardar">
-		</div>
-	</form>
+<div class="contenedor-detalle">
+
+	<div class="contenido-detalle-todo" *ngIf="!error">
+		<h1>{{todo.id}} : {{todo.title}}</h1>
+		<p class="todo-instruccion">
+			Modifiqué el texto de la tarea:
+		</p>
+		<form (submit)="editTodo(titulo.value)">
+			<div class="campo-formulario">
+				<label for="usuario">Titulo de la tarea:</label>
+				<input type="text" name="titulo"  value="{{todo.title}}" #titulo />
+			</div>
+			<div class="campo-formulario">
+				<input type="submit" value="Guardar">
+			</div>
+			<div class="campo-formulario">
+				<input type="submit" value="Regresar" class="btn-cancel" (click)="regresar();">
+			</div>
+		</form>
+	</div>
+	<div class="contenido-detalle-todo" *ngIf="error">
+		<h1>No encontramos detalles de esta tarea</h1>
+		<br>
+		<input type="submit" value="Regresar" class="btn-cancel" (click)="regresar();">
+	</div>
+
 </div>
